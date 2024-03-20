@@ -11,7 +11,8 @@ public class Programa{
         //Exercicio08.Executar08();
         //Exercicio09.Executar09();
         //Exercicio10.Executar10();
-        Exercicio11.Executar11();
+        //Exercicio11.Executar11();
+        Exercicio12.Executar12();
     }
 
 }

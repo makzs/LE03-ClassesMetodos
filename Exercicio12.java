@@ -1,0 +1,58 @@
+// 12. A concessionária de veículos “CARANGO VELHO” está vendendo os seus veículos com desconto. 
+// Faça um programa que calcule e exiba o valor do desconto e o valor a ser pago pelo cliente
+// de vários carros. O desconto deverá ser calculado de acordo com o ano do veículo. 
+// Até 2000- 12% e acima de 2000 - 7%. 
+// O sistema deverá perguntar se deseja continuar calculando desconto até que a resposta seja: 
+// “(N) Não”. Informar total de carros com ano até 2000 e total geral.
+
+import java.util.Scanner;
+import classes.DescontosCarros;
+
+public class Exercicio12 {
+
+    public static void Executar12(){
+        Scanner leitor = new Scanner(System.in);
+        boolean repetir = true;
+
+        System.out.println("Carango Velho");
+        System.out.println("Calculadora de descontos");
+
+        while (repetir){
+            boolean respValida = false;
+            System.out.println("\n----------------------------------\n");
+            System.out.print("Informe o preço do veiculo: R$");
+            double preco = leitor.nextDouble();
+            System.out.print("\nInforme o ano do veiculo: ");
+            int ano = leitor.nextInt();
+            if (ano > 2000){
+                System.out.println("\nDesconto calculado: " + DescontosCarros.desconto7(preco));
+                System.out.println("Preço final: " + (preco - DescontosCarros.desconto7(preco)));
+            }
+            else{
+                System.out.println("\nDesconto calculado: " + DescontosCarros.desconto12(preco));
+                System.out.println("Preço final: " + (preco - DescontosCarros.desconto12(preco)));
+            }
+            do{
+                System.out.println("Deseja continuar? (S/N)");
+                char resp = leitor.next().charAt(0);
+                resp = Character.toUpperCase(resp);
+                if (resp == 'S'){
+                    respValida = true;
+                    repetir = true;
+                }
+                else if (resp == 'N'){
+                    System.out.println("Desligando...");
+                    respValida = true;
+                    repetir = false;
+                }
+                else{
+                    System.out.println("Resposta invalida!");
+                }
+            } while(respValida == false);
+        }
+
+        System.out.println("\n----------------------------------\n");
+        leitor.close();
+    }
+
+}
