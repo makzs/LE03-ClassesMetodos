@@ -24,7 +24,8 @@ public class Programa{
         //Exercicio21.Executar21();
         //Exercicio22.Executar22();
         //Exercicio23.Executar23();
-        Exercicio24.Executar24();
+        //Exercicio24.Executar24();
+        Exercicio25.Executar25();
     }
 
 }
